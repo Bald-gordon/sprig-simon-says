@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simon Says — Web Player</title>
+  <meta name="description" content="Play Simon Says in your browser with keyboard or touch controls.">
+  <link rel="stylesheet" href="./web-player.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Simon Says — Web Player</h1>
+      <p>Sprig-inspired browser edition</p>
+    </header>
+
+    <section class="game-wrap">
+      <section class="panel" aria-label="Game board">
+        <div class="pad" aria-live="polite">
+          <button data-color="green" aria-label="Green panel (W)">W</button>
+          <button data-color="orange" aria-label="Orange panel (D)">D</button>
+          <button data-color="yellow" aria-label="Yellow panel (A)">A</button>
+          <button data-color="blue" aria-label="Blue panel (S)">S</button>
+          <div class="center" aria-hidden="true">Simon<br>Says</div>
+        </div>
+      </section>
+
+      <section class="panel" aria-label="Game status and controls">
+        <div class="stats">
+          <article><h2>Score</h2><p id="score-value">0</p></article>
+          <article><h2>Best</h2><p id="best-value">0</p></article>
+          <article><h2>Round</h2><p id="round-value">-</p></article>
+          <article><h2>Speed</h2><p id="speed-value">1</p></article>
+          <article><h2>Pause</h2><p id="pause-value">Running</p></article>
+          <article><h2>Sound</h2><p id="mute-value">On</p></article>
+        </div>
+
+        <div class="status" role="status" aria-live="polite">
+          <strong id="status-text" data-state="idle">Ready to start</strong>
+          <span id="key-hint">Press Start to begin, then use W/A/S/D.</span>
+        </div>
+
+        <div class="controls">
+          <button id="start-button">Start Game</button>
+          <button id="restart-button" hidden>Restart (J)</button>
+          <button id="pause-button" disabled>Pause (K)</button>
+          <button id="mute-button">Mute (L)</button>
+        </div>
+
+        <p class="help">
+          Controls: <kbd>W</kbd> green, <kbd>A</kbd> yellow, <kbd>S</kbd> blue, <kbd>D</kbd> orange,
+          <kbd>K</kbd> pause, <kbd>L</kbd> mute, <kbd>J</kbd> restart after game over.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./web-player.js"></script>
+</body>
+</html>
